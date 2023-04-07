@@ -1,6 +1,6 @@
-import { compareSemVer } from './compareSemVer';
-import { getDepTree } from './getDepTree';
-import { walker } from './walker';
+import { compareSemVer } from './compareSemVer.js';
+import { getDepTree } from './getDepTree.js';
+import { walker } from './walker.js';
 
 export const pnpmOverride = async () => {
   const stats = {

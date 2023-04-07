@@ -1,7 +1,4 @@
-import { exec, spawn } from 'child_process';
-
-/* export const execShellCommand = (cmd: string) =>
-  new Promise<string>((res, _rej) => exec(cmd, (_err, stdout) => res(stdout))); */
+import { spawn } from 'node:child_process';
 
 export const execShellCommand = (cmd: string) =>
   new Promise<string>((res, _rej) => {

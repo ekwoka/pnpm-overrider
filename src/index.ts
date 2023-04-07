@@ -1,3 +1,3 @@
-import { pnpmOverride } from './pnpmOverride';
+import { pnpmOverride } from './pnpmOverride.js';
 
 await pnpmOverride();

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "bin": {
-    "pnpm-overrider": "dist/index.js",
+    "pnpm-override": "dist/index.js",
     "@ekwoka/pnpm-override": "dist/index.js"
   },
   "exports": {

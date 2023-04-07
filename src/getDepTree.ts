@@ -1,5 +1,5 @@
-import { execShellCommand } from './utils/execShellCommand';
-import { PackageJson } from './walker';
+import { execShellCommand } from './utils/execShellCommand.js';
+import { PackageJson } from './walker.js';
 
 export const getDepTree = async (depth = 0): Promise<[PackageJson]> => {
   const output = await execShellCommand(
