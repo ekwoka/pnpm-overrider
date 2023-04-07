@@ -35,6 +35,10 @@ export const pnpmOverride = async () => {
 
   console.log(stats);
   console.log(
-    Object.fromEntries(overrides.sort((a, b) => a[0].localeCompare(b[0])))
+    Object.fromEntries(
+      overrides.sort((a, b) =>
+        b[0].split('@')[0].localeCompare(a[0].split('@')[0])
+      )
+    )
   );
 };
