@@ -1,6 +1,6 @@
 {
   "name": "@ekwoka/pnpm-override",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "bin": {
     "pnpm-override": "dist/index.js",
