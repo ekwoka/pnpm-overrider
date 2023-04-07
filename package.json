@@ -1,0 +1,104 @@
+{
+  "name": "@ekwoka/pnpm-override",
+  "version": "0.0.1",
+  "description": "",
+  "bin": {
+    "pnpm-overrider": "dist/index.js",
+    "@ekwoka/pnpm-override": "dist/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint --fix ./src; prettier --write ./src --loglevel error",
+    "lint:check": "eslint --max-warnings 10 ./src && prettier --check ./src",
+    "prebuild": "rm -rf dist",
+    "prepare": "husky install",
+    "size": "node scripts/esbuild.js",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.1.1",
+    "@types/node": "18.15.11",
+    "@typescript-eslint/eslint-plugin": "5.57.1",
+    "@typescript-eslint/parser": "5.57.1",
+    "@vitest/coverage-c8": "0.29.8",
+    "eslint": "8.37.0",
+    "eslint-plugin-filename-export": "0.5.1",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.0",
+    "prettier": "2.8.7",
+    "typescript": "5.0.3",
+    "vite": "4.2.1",
+    "vite-tsconfig-paths": "4.0.8",
+    "vitest": "0.29.8"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSameLine": true,
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
+    "importOrder": [
+      "node:.*",
+      "@/lib(.*)$",
+      "@/utils(.*)$",
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
+  },
+  "lint-staged": {
+    "*.{js,ts,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "pnpm": {
+    "overrides": {
+      "chalk@<5.2.0": "5.2.0",
+      "cli-truncate@<3.1.0": "3.1.0",
+      "slice-ansi@<5.0.0": "5.0.0",
+      "is-fullwidth-code-point@<4.0.0": "4.0.0",
+      "string-width@<5.1.2": "5.1.2",
+      "emoji-regex@<9.2.2": "9.2.2",
+      "strip-ansi@<7.0.1": "7.0.1",
+      "path-key@<4.0.0": "4.0.0",
+      "onetime@<6.0.0": "6.0.0",
+      "mimic-fn@<4.0.0": "4.0.0",
+      "tslib@<2.5.0": "2.5.0",
+      "wrap-ansi@<7.0.0": "7.0.0",
+      "color-convert@<2.0.1": "2.0.1",
+      "color-name@<1.1.4": "1.1.4",
+      "type-fest@<0.21.3": "0.21.3",
+      "source-map@<0.6.1": "0.6.1",
+      "p-limit@<4.0.0": "4.0.0",
+      "yocto-queue@<1.0.0": "1.0.0",
+      "semver@<7.3.8": "7.3.8",
+      "supports-color@<7.2.0": "7.2.0",
+      "has-flag@<4.0.0": "4.0.0",
+      "escape-string-regexp@<4.0.0": "4.0.0",
+      "estraverse@<5.3.0": "5.3.0",
+      "globals@<13.20.0": "13.20.0",
+      "eslint-scope@<7.1.1": "7.1.1",
+      "glob-parent@<6.0.2": "6.0.2",
+      "@babel/types@<7.21.4": "7.21.4"
+    }
+  }
+}

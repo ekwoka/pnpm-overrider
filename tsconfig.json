@@ -1,0 +1,21 @@
+{
+  // Change this to match your project
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"],
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "module": "es2022",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esNext"
+  }
+}
