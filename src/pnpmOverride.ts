@@ -18,7 +18,7 @@ export const pnpmOverride = async () => {
   const directDeps: Record<string, string> = Object.fromEntries(
     walker(directDepsTree[0])
   );
-  const overrides: Record<string, string> = {};
+  const overrides: [string, string][] = [];
   for (const pkg in deps) {
     stats.totalPackages++;
     const versions = deps[pkg];
@@ -30,9 +30,11 @@ export const pnpmOverride = async () => {
       [...versions].reduce((latest, version) =>
         compareSemVer(latest, version) === 1 ? latest : version
       );
-    overrides[`${pkg}@<${latestVersion}`] = latestVersion;
+    overrides.push([`${pkg}@<${latestVersion}`, latestVersion]);
   }
 
   console.log(stats);
-  console.log(overrides);
+  console.log(
+    Object.fromEntries(overrides.sort((a, b) => a[0].localeCompare(b[0])))
+  );
 };
